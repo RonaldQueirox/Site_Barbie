@@ -1,0 +1,71 @@
+.background {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    inset: 0;
+
+    display: flex;
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: var(--shadow-car);
+}
+
+.cloud {
+    position: absolute;
+    z-index: -2;
+    left: -258px;
+
+
+    width: auto;
+    height: 11vh;
+
+    animation: moveCloud 10s linear infinite;
+}
+
+.cloud:nth-child(1) {
+    top: 70px;    
+    animation-delay: 4s;
+}
+
+.cloud:nth-child(2) {
+    top: 190px;
+    animation-delay: 8s;
+}
+
+.cloud:nth-child(3) {
+    top: 420px;
+}
+
+.cloud:nth-child(4) {
+    top: 310px;
+    animation-delay: 6s;
+
+}
+
+.cloud:nth-child(5) {
+    top: 520px;
+    animation-delay: 2.5s;
+
+}
+
+.car {
+    width: 100%;
+    height: auto;
+
+    margin-top: auto;
+}
+
+@keyframes moveCloud {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 258px));
+    }
+}
